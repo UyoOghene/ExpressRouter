@@ -1,19 +1,24 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req,res)=>{
-    res.send('all dogs')
+// Get all dogs
+router.get('/', (req, res) => {
+    res.send('All dogs');
+});
 
-})
-router.get('/:id/edit', (req,res)=>{
-    res.send('Editing one dog')
-})
+// Edit a specific dog
+router.get('/:id/edit', (req, res) => {
+    res.send(`Editing dog with ID: ${req.params.id}`);
+});
 
-router.get('/:id', (req,res)=>{
-    res.send('one dog')
-})
-router.post('/', (req,res)=>{
-    res.send('New dog')
-})
+// Get a specific dog
+router.get('/:id', (req, res) => {
+    res.send(`Details of dog with ID: ${req.params.id}`);
+});
+
+// Create a new dog
+router.post('/', (req, res) => {
+    res.send('New dog');
+});
 
 module.exports = router;

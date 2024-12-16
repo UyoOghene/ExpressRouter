@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
+
 // Get all shelters
 router.get('/', (req, res) => {
     res.send('All shelters');
